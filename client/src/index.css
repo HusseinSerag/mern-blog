@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ql-editor {
+  font-size: 1.05rem;
+}
+
+.post-content br {
+  background-color: black;
+  width: 100%;
+  display: block;
+}
+.post-content p {
+  width: 100%;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.post-content h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin: 1rem 0;
+}
+.post-content h2 {
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  margin: 1rem 0;
+}
+.post-content a {
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+  color: "theme(colors.teal.500)";
+}
+.dark .post-content a {
+  color: "theme(color.teal.900)";
+}
