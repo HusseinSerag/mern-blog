@@ -31,7 +31,10 @@ export async function createCommentHandler(
 
     return res.status(201).json({
       message: "success",
-      comment: await comment.populate("user"),
+      comment: await comment.populate({
+        path: "user",
+        select: "username photoURL _id",
+      }),
     });
   } catch (e) {
     next(e);

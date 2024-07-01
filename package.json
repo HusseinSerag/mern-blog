@@ -6,7 +6,8 @@
   "scripts": {
     "test": "curl http://localhost:8000/test",
     "dev": "nodemon api/index.ts",
-    "start": "tsc && node dist/index.js"
+    "start": "tsc && node dist/index.js",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client && tsc"
   },
   "keywords": [],
   "author": "Hussein Serag <husseinserag2014@gmail.com>",

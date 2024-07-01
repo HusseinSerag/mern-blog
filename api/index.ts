@@ -12,7 +12,15 @@ import routes from "./routes";
 import "./utils/cloudinary";
 
 const app = express();
-app.use(helmet());
+
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "img-src": ["'self'", "https: data:"],
+    },
+  })
+);
 app.use(
   cors({
     credentials: true,
@@ -28,6 +36,8 @@ app.get("/test", (req, res) => {
     message: "Test connection successful",
   });
 });
+
+app.use(express.static(path.join(__dirname, "./../client/dist")));
 app.listen(8000, async () => {
   log.info("Server is running at port 8000");
   await connect();
