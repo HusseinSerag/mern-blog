@@ -38,7 +38,7 @@ app.get("/test", (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, "./../client/dist")));
-app.listen(8000, async () => {
+app.listen(process.env.PORT || 8000, async () => {
   log.info("Server is running at port 8000");
   await connect();
   routes(app);
