@@ -13,18 +13,10 @@ import "./utils/cloudinary";
 
 const app = express();
 
-// app.use(
-//   helmet.contentSecurityPolicy({
-//     useDefaults: true,
-//     directives: {
-//       "img-src": ["'self'", "https: data:"],
-//     },
-//   })
-// );
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_ORIGIN,
   })
 );
 app.use(express.json());
